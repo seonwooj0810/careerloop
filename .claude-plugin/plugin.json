@@ -1,11 +1,23 @@
 {
   "name": "careerloop",
-  "version": "1.0.1",
+  "displayName": "CareerLoop",
+  "version": "1.0.2",
   "description": "AI 기반 종합 구직 동반자. 리크루터, 커리어 코치, 리버스 리크루터, 시장 분석가의 역할을 하나의 지능형 플랫폼으로 결합하고, 무엇이 효과적인지 학습하는 피드백 루프를 갖추고 있습니다.",
   "author": {
-    "name": "seonwooj0810"
+    "name": "seonwooj0810",
+    "url": "https://github.com/seonwooj0810"
   },
-  "icon": "./icon.svg",
+  "homepage": "https://github.com/seonwooj0810/careerloop#readme",
+  "repository": "https://github.com/seonwooj0810/careerloop",
+  "license": "Apache-2.0",
+  "keywords": [
+    "career",
+    "job-search",
+    "resume",
+    "interview",
+    "korean"
+  ],
+  "icon": "./.claude-plugin/icon.svg",
   "privacyPolicyUrl": "https://github.com/seonwooj0810/careerloop/blob/main/PRIVACY.md",
   "skills": "./skills/"
 }

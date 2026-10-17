@@ -35,6 +35,15 @@ CareerLoop는 구직 활동 전체를 한곳에서 관리합니다.
 
 ---
 
+## 플러그인이 실행하고 전송하는 것
+
+- **로컬 스크립트:** `scripts/build_timeline.py`(`python3`로 지원 타임라인 `timeline.html` 생성, 네트워크 사용 없음)와 `scripts/load-context.sh`(선택 훅용, 기본으로는 등록되지 않음). 모든 데이터 파일은 내가 지정한 폴더의 `CareerLoop/`에 저장됩니다.
+- **웹 조회:** 일부 스킬(`search-jobs`, `salary-research`, `market-brief`, `event-radar`, `event-intelligence` 등)은 세션에서 WebSearch/WebFetch를 허용한 경우에만 웹을 조회합니다. 이때 직무·지역·회사명 같은 검색어가 나갈 수 있고, 이력서 원문은 보내지 않습니다.
+- **선택 연동:** Gmail·Calendar·Microsoft 365·Indeed·Apify·Chrome 등은 내가 Claude 앱에서 직접 연결하고 승인한 경우에만 읽기 전용으로 사용합니다. 번들된 MCP 서버나 훅은 없습니다(`.mcp.json`, `hooks/hooks.json`은 비어 있음).
+- **선택 설치:** 면접 전사 기능의 설치 과정은 아래 "면접 오디오 전사"에 적었습니다.
+
+---
+
 ## 플러그인 마켓플레이스
 
 CareerLoop는 **Phase 1G — 마켓플레이스 공개**의 일환으로 GitHub 기반 마켓플레이스 피드를 통해 배포됩니다. 비개발자도 Claude Desktop의 **Browse plugins**에서 클릭 한 번으로 설치할 수 있습니다.
@@ -271,6 +280,12 @@ CareerLoop는 **스킬 중심**입니다. 대부분의 워크플로는 평소 �
 토큰을 이 저장소나 신뢰할 수 없는 채팅 로그에 붙여 넣지 마세요. 도구 권한 프롬프트(예: "needs approval")는 정상이며, 연봉 조사를 실행하려는 의도일 때 승인하면 됩니다.
 
 ### 선택: 면접 오디오 전사(`mcp-transcribe`)
+
+> **`/careerloop:setup-transcribe`가 실행하는 것**(선택 기능이며, 실행하기 전에 단계별로 안내합니다)
+> 1. `command -v uv`, `ffmpeg`, `brew`로 설치 여부만 확인합니다(읽기 전용). `uv`나 `ffmpeg`가 없으면 `brew install`을 실행해도 되는지 먼저 묻고, 승낙한 뒤에만 설치합니다.
+> 2. `mcp-transcribe/install_transcribe_mcp.py`를 실행합니다. 환경을 점검한 뒤 `uv sync`로 Python 의존성을 `mcp-transcribe/.venv`에 설치합니다(Apple Silicon은 `--extra mlx`).
+> 3. Claude Desktop 설정 파일(`~/Library/Application Support/Claude/claude_desktop_config.json`)에 `mcp-transcribe` 서버를 등록합니다. 수정 전에 `claude_desktop_config.json.transcribe_backup`으로 백업하고, 점검이 하나라도 실패하면 설정 파일을 건드리지 않습니다.
+> 4. 첫 전사 때 라이브러리가 Whisper 모델 파일을 Hugging Face에서 내려받을 수 있습니다. 오디오 자체는 외부로 전송하지 않고 내 컴퓨터에서만 처리합니다.
 
 `interview-capture`는 로컬 **`mcp-transcribe`** MCP 서버(Whisper 기반, 전적으로 내 컴퓨터에서 실행되며 클라우드 계정 불필요)를 통해 녹음된 면접 오디오 파일을 자동으로 전사할 수 있습니다. 준비와 모의 면접 자체는 텍스트 전용이며, 이 기능은 녹음 후 전사하는 용도로만 쓰입니다.
 

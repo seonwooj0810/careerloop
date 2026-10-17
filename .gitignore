@@ -20,6 +20,8 @@ careerloop.code-workspace
 able-imprint-176422-8a96535f0abc.json
 __pycache__/
 mcp-transcribe/mcp-transcribe.mcpb
+# 설치 때 uv sync가 로컬에서 만든다(크기 한도 때문에 추적하지 않음)
+mcp-transcribe/uv.lock
 
 # 배포 플러그인에서 제외됨: mcp-voice는 안정적으로 실행된 적이 없고
 # (mcp-transcribe/README.md "mcp-voice를 대체한 이유" 참고), mcp-luma는
