@@ -24,7 +24,7 @@ triggers:
 
 작업 디렉터리(또는 해당 하위 디렉터리)를 사용자의 구직 디렉터리로 설정하며, 이를 `{user_dir}`라고 부릅니다. 이 플러그인이 생성하는 모든 데이터(프로필, ExperienceLibrary, 트래커, 생성된 아티팩트)는 사용자의 원본 문서와 함께 `{user_dir}` 폴더의 하위 디렉터리에 저장됩니다.
 
-**연동(Indeed, Apify, LinkedIn, Gmail, Microsoft 365, Google Calendar):** [CONNECTORS.md](CONNECTORS.md)를 따릅니다. **현재 세션에 아직 연결되지 않은 서비스에 대해서만 안내합니다**(호스트 도구가 없거나 사용자가 문제를 알려 온 경우). 도구가 이미 있으면 **간단히 확인만** 하면 충분하며, 해당 서비스에 대해 설정, OAuth, 브라우저 접근 관련 질문을 **하지 않습니다**.
+**연동(Indeed, Apify, LinkedIn, Gmail, Microsoft 365, Google Calendar):** [CONNECTORS.md](../../CONNECTORS.md)를 따릅니다. **현재 세션에 아직 연결되지 않은 서비스에 대해서만 안내합니다**(호스트 도구가 없거나 사용자가 문제를 알려 온 경우). 도구가 이미 있으면 **간단히 확인만** 하면 충분하며, 해당 서비스에 대해 설정, OAuth, 브라우저 접근 관련 질문을 **하지 않습니다**.
 
 ## 워크플로
 
@@ -33,7 +33,7 @@ triggers:
 | 단계 | 할 일 |
 | --- | --- |
 | **1 — 탐색** | **이 채팅**에서 해당 연동의 도구를 확인합니다. **연결되어 있으면**(도구가 있으면) 간단히 확인하고 해당 연동의 이후 단계는 **건너뜁니다**. |
-| **2 — 설정** | **연결되지 않은 경우에만:** 설정할지 **묻고**, [CONNECTORS.md](CONNECTORS.md)를 안내합니다. **사용자가 직접** **Connectors** 설정과 OAuth/토큰 절차를 완료합니다. Chrome/컴퓨터 사용으로 OAuth를 자동화하는 일은 **절대 하지 않습니다**. |
+| **2 — 설정** | **연결되지 않은 경우에만:** 설정할지 **묻고**, [CONNECTORS.md](../../CONNECTORS.md)를 안내합니다. **사용자가 직접** **Connectors** 설정과 OAuth/토큰 절차를 완료합니다. Chrome/컴퓨터 사용으로 OAuth를 자동화하는 일은 **절대 하지 않습니다**. |
 | **3 — 브라우저 접근** | **MCP로 연결되지 않은 경우**이거나 흐름이 **브라우저 전용**인 경우(예: **LinkedIn** 분석)에만 진행합니다. MCP 도구가 이미 작동하는 **Indeed** / **Apify** / 받은편지함 / **캘린더**에 대해서는 묻지 **않습니다**. |
 
 연동마다 **1 → 2 → (필요할 때만 3)** 순서로 적용합니다. 1단계가 이미 성공했다면 2~3단계는 **생략**합니다.
@@ -571,7 +571,7 @@ OAuth 이후에도 도구가 없으면 다음을 확인하도록 안내합니다
 4. **Microsoft 365(Outlook 포함, 캘린더/Teams 화면은 호스트에 따름):** **Microsoft 365**를 열고 → **Connect** → **Microsoft** 로그인을 마칩니다. **Team/Enterprise** 플랜과 경우에 따라 **관리자 설정**이 필요할 수 있습니다. [Microsoft 365 connector](https://claude.com/docs/connectors/microsoft/365)와 [Enabling and using the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)를 참조하세요. 보안 개요: [Microsoft 365 connector: Security Guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide).
 5. 연결할 때마다 메일 또는 캘린더 관련 도구가 나타나지 않으면 **새 채팅**을 제안합니다.
 
-**검증:** 호스트가 Gmail, Microsoft 365, Google Calendar 도구를 노출하면 목록에 있고 활성화되어 있는지 확인합니다. 사용자의 **플랜이나 조직**에 커넥터가 포함되어 있지 않으면 그 사실을 분명히 말하고 앱의 **Connectors** 카탈로그와 [CONNECTORS.md](CONNECTORS.md)를 안내합니다. 해당 도구가 **이미** 작동 중이면 메일이나 캘린더에 대한 브라우저 접근은 묻지 **않습니다**. 채팅의 MCP로 충분합니다.
+**검증:** 호스트가 Gmail, Microsoft 365, Google Calendar 도구를 노출하면 목록에 있고 활성화되어 있는지 확인합니다. 사용자의 **플랜이나 조직**에 커넥터가 포함되어 있지 않으면 그 사실을 분명히 말하고 앱의 **Connectors** 카탈로그와 [CONNECTORS.md](../../CONNECTORS.md)를 안내합니다. 해당 도구가 **이미** 작동 중이면 메일이나 캘린더에 대한 브라우저 접근은 묻지 **않습니다**. 채팅의 MCP로 충분합니다.
 
 **건너뛴 경우:**
 

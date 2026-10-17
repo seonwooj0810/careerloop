@@ -21,7 +21,7 @@ triggers:
 
 ## 게이트 (가장 먼저 실행)
 
-1. **패턴:** 이 연동에는 [CONNECTORS.md](CONNECTORS.md)의 **3단계**를 적용합니다. **탐색(Discover)** — 여기에는 표준 LinkedIn MCP가 없습니다. **설정(Configure)** — 사용자가 호스트 브라우저에서 **LinkedIn에 로그인**된 상태여야 합니다(로그인은 **사용자**가 직접 합니다). **브라우저 접근(Browser access)** — **Claude in Chrome** 및/또는 **computer use**를 **묻습니다**(**둘 다 아님** / 하나 / 둘 다). **둘 다 아니거나** 도구가 없으면 **중단**합니다. 선택한 모드에 대한 **읽기 전용** 승인 없이 스크래핑하지 **않습니다.**
+1. **패턴:** 이 연동에는 [CONNECTORS.md](../../CONNECTORS.md)의 **3단계**를 적용합니다. **탐색(Discover)** — 여기에는 표준 LinkedIn MCP가 없습니다. **설정(Configure)** — 사용자가 호스트 브라우저에서 **LinkedIn에 로그인**된 상태여야 합니다(로그인은 **사용자**가 직접 합니다). **브라우저 접근(Browser access)** — **Claude in Chrome** 및/또는 **computer use**를 **묻습니다**(**둘 다 아님** / 하나 / 둘 다). **둘 다 아니거나** 도구가 없으면 **중단**합니다. 선택한 모드에 대한 **읽기 전용** 승인 없이 스크래핑하지 **않습니다.**
 2. **`{user_dir}`:** 구직 폴더를 확인합니다. 네트워킹 데이터는 `{user_dir}/CareerLoop/networking.json`입니다.
 3. **스케줄 무인 실행:** 이번 호출이 `/schedule`에서 왔거나 사용자가 무인 실행을 요청했다면, 브라우저/도구에 대한 대화형 질문을 하지 **않습니다.** `{user_dir}/CareerLoop/profile.md`의 `## LinkedIn` 아래에 이전 동의가 이미 저장되어 있을 때만 계속합니다.
    - `LinkedIn slug: <value>`

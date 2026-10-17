@@ -1,6 +1,12 @@
 # CareerLoop
 
+[![License](https://img.shields.io/github/license/seonwooj0810/careerloop)](LICENSE) [![Release](https://img.shields.io/github/v/release/seonwooj0810/careerloop)](https://github.com/seonwooj0810/careerloop/releases) ![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-D97757)
+
 Claude Cowork 플러그인으로 만든 AI 기반 end-to-end 구직 동반자입니다. 리크루터, 커리어 코치, 리버스 리크루터, 시장 분석가의 기능을 하나의 지능형 플랫폼에 담았고, 시간이 지날수록 무엇이 나에게 효과가 있는지 학습합니다.
+
+> **English:** CareerLoop is an AI job-search companion for Claude Code and Cowork. It tracks applications, tailors résumés and cover letters from your own verified experience, prepares interviews, evaluates and negotiates offers, and learns what works for you. 46 skills and 8 agents. Data stays in a folder you choose; the plugin bundles no servers, hooks or telemetry. It never invents experience: gaps are reported, not filled. Output language is Korean.
+>
+> `claude plugin marketplace add seonwooj0810/careerloop` → `claude plugin install careerloop@careerloop-github`
 
 ## 하는 일
 
@@ -12,6 +18,25 @@ CareerLoop는 구직 활동 전체를 한곳에서 관리합니다.
 - 헛된 격려가 아니라 솔직하고 정직한 평가를 제공합니다
 
 핵심 차별점은 모든 지원 결과가 시스템에 되먹임된다는 점입니다. 시간이 지나면 어떤 경험 단위, 이력서 변형, 소통 스타일이 나에게 실제로 효과가 있는지 학습합니다.
+
+---
+
+## 예시 출력
+
+가상 인물(김테스트)로 실행한 `/careerloop:daily-schedule` 결과의 일부입니다.
+
+```
+CareerLoop — Daily Brief [2026-10-17]
+
+파이프라인
+  지원 완료        1
+  전화 스크리닝    0
+  면접             0
+  오퍼             0
+
+후속 조치 기한     0건 기한 초과 (바나나페이먼츠 후속 확인 예정일: 10/20)
+오늘의 미팅        예정 없음
+```
 
 ---
 
@@ -368,4 +393,4 @@ Phase 3은 CareerLoop를 "함께 앉아서 쓰는 강력한 어시스턴트"에�
 
 ## 라이선스
 
-MIT 라이선스 — 자세한 내용은 [LICENSE](LICENSE)를 참고하세요.
+Apache License 2.0 — 자세한 내용은 [LICENSE](LICENSE)를 참고하세요. 단, `mcp-transcribe/manifest.json`은 MIT로 표기돼 있습니다.
