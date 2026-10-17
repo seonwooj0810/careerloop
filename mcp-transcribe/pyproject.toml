@@ -1,0 +1,15 @@
+[project]
+name = "mcp-transcribe"
+version = "1.0.0"
+description = "녹음된 오디오 파일을 일괄 전사하는 로컬 MCP 서버. 마이크 없음, TTS 없음."
+# 의도적으로 3.11-3.13. 여러 오디오/ML 휠에 아직 cp314 빌드가 없다.
+# >=3.14로 고정하면 서버가 등록되기도 전에 기동에 실패한다.
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "mcp[cli]>=1.27.0,<2",
+    "faster-whisper>=1.2.1",
+]
+
+[project.optional-dependencies]
+# Apple Silicon 가속. arm64 Mac에서 install_transcribe_mcp.py가 설치한다.
+mlx = ["mlx-whisper>=0.4.2"]

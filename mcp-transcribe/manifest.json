@@ -1,0 +1,38 @@
+{
+  "manifest_version": "0.2",
+  "name": "mcp-transcribe",
+  "version": "1.0.0",
+  "description": "기존 오디오 파일을 Whisper로 전사하는 로컬 MCP 서버. Apple Silicon에서는 mlx-whisper(Metal 가속)를 쓰고, CPU에서는 faster-whisper로 대체합니다. 설계상 마이크나 스피커에는 접근하지 않습니다.",
+  "author": {
+    "name": "seonwooj0810",
+    "url": "https://github.com/seonwooj0810"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "server/main.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--project", "${__dirname}", "${__dirname}/server/main.py"]
+    }
+  },
+  "tools": [
+    {
+      "name": "transcribe_file",
+      "description": "디스크의 오디오 파일을 전사해 전사본과 시간 정보가 있는 세그먼트를 반환합니다"
+    },
+    {
+      "name": "backend_info",
+      "description": "활성 STT 백엔드와 ffmpeg 설치 여부를 보고합니다"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seonwooj0810/careerloop"
+  },
+  "keywords": ["transcription", "stt", "whisper", "mlx", "interview"],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "python": ">=3.11,<3.14" }
+  }
+}

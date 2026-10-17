@@ -1,0 +1,42 @@
+# 비밀 값
+.env
+*.env
+.env.*
+
+# 개인 구직 데이터(user_dir — 절대 커밋하지 않음)
+career/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# 로컬 Claude 지침
+CLAUDE.md
+
+# 에디터
+.vscode/
+careerloop.code-workspace
+
+able-imprint-176422-8a96535f0abc.json
+__pycache__/
+mcp-transcribe/mcp-transcribe.mcpb
+
+# 배포 플러그인에서 제외됨: mcp-voice는 안정적으로 실행된 적이 없고
+# (mcp-transcribe/README.md "mcp-voice를 대체한 이유" 참고), mcp-luma는
+# 어떤 스킬도 호출하지 않았다.
+# 로컬 디스크에는 남겨 두지만 더 이상 추적하거나 배포하지 않는다.
+mcp-voice/
+mcp-luma/
+
+# 로컬 전사 어휘(고유명사 — 절대 커밋하지 않음)
+mcp-transcribe/vocabulary.local.json
+
+# 전사 결과물(면접 내용이 들어 있을 수 있음)
+*.transcript.txt
+*.segments.json
+
+# 로컬 Claude Code 설정
+.claude/settings.local.json
+
+# MCP 서버 안의 Python 가상환경
+mcp-transcribe/.venv/

@@ -1,0 +1,21 @@
+{
+  "_comment": [
+    "이 파일을 vocabulary.local.json으로 복사하고 실제 용어를 채우세요.",
+    "vocabulary.local.json은 gitignore 대상이라 커밋되지 않습니다.",
+    "Whisper가 그대로 두면 망가뜨릴 고유명사입니다: 고용주, 제품,",
+    "사람 이름, 약어, 전문 용어. Whisper의 initial_prompt에 주입됩니다.",
+    "전체를 약 200토큰 이내로 유지하세요. Whisper는 긴 프롬프트를 잘라 냅니다."
+  ],
+  "always": [
+    "AcmeCorp",
+    "Widgetron",
+    "ExampleProject"
+  ],
+  "groups": {
+    "example-employer": [
+      "Example Holdings",
+      "J. Doe",
+      "SomeAcronym"
+    ]
+  }
+}

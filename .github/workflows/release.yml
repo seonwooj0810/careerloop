@@ -1,0 +1,39 @@
+name: careerloop 플러그인 zip 릴리스
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".claude-plugin/plugin.json"
+      - ".github/workflows/release.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: 플러그인 버전 읽기
+        id: ver
+        run: echo "version=$(jq -r .version .claude-plugin/plugin.json)" >> "$GITHUB_OUTPUT"
+
+      - name: 플러그인 zip 생성
+        run: git archive --format=zip -o "careerloop-v${{ steps.ver.outputs.version }}.zip" HEAD
+
+      - name: 릴리스 자산 업로드
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.ver.outputs.version }}
+          name: CareerLoop v${{ steps.ver.outputs.version }}
+          files: |
+            careerloop-v${{ steps.ver.outputs.version }}.zip
+          overwrite_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
