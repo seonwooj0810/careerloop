@@ -17,7 +17,7 @@
     "interview",
     "korean"
   ],
-  "icon": "./.claude-plugin/icon.svg",
+  "icon": "./.claude-plugin/icon.png",
   "privacyPolicyUrl": "https://github.com/seonwooj0810/careerloop/blob/main/PRIVACY.md",
   "skills": "./skills/"
 }
